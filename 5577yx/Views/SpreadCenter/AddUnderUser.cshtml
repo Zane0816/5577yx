@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "添加下属";
+    Layout = "~/Views/SpreadCenter/SpreadLayout.cshtml";
+}
+
+<style>
+    .logindiv label {
+        width: auto;
+        font-size: 13px;
+    }
+</style>
+<div class="main">
+    <form method="post" onsubmit="return SpreadUserReg()">
+        <div class="logindiv" style="padding: 0px; margin: 0px;margin-top:20px;">
+            <table style="text-align: center; font-size: 13px;">
+                <tr>
+                    <td>
+                        <label>用户名：</label></td>
+                    <td>
+                        <input name="UserName" type="text" id="UserName" class="txt1" onblur="VerifyUserName()"></td>
+                    <td style="text-align: left"><em>*</em><span id="UserNameMsg" class="msg">长度为6～16位，由字母、数字组成，且只能以字母开头</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>密码：</label></td>
+                    <td>
+                        <input name="PWD" type="password" id="PWD" class="txt1" onkeyup="VerifyPWDStrong()" onblur="VerifyPWD()" maxlength="16"></td>
+                    <td style="text-align: left"><em>*</em> <span id="PWDMsg" class="msg">密码长度为6～16位，不可与账号相同。</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>确认密码：</label></td>
+                    <td>
+                        <input type="password" id="PWDAgain" name="PWDAgain" class="txt1" maxlength="16" onblur="VerifyPWDAgain()"></td>
+                    <td style="text-align: left"><em>*</em> <span id="PWDAgainMsg" class="msg">再一次输入密码进行确认，效验密码是否填写错误。</span></td>
+                </tr>
+            </table>
+        </div>
+        <div class="Login_an">
+            <input type="submit" name="btnreg" value="" id="btnreg" class="btn_log">
+        </div>
+    </form>
+</div>
+

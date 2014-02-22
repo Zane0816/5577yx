@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/sty.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/md5.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body class="body">
+    <div id="tgcontent">
+        <div class="title">
+            推广中心
+        </div>
+        <!--推广员-->
+        <div class="session session_first">
+            <a href="/UserCenter/MyInfoEdit" title="点击更换头像">
+                <img src="@Html.Raw("/Images/users/" + ViewData["Photo"] + ".jpg")" class="user_avatar"></a>
+            <div class="user_page_info">
+                <p>
+                    <strong>推广员：</strong><font class="orange_link"> @ViewData["UserName"]</font>
+                </p>
+                <p>
+                    <strong>推广人数：</strong><font class="orange_link">@ViewData["SpreadCount"]</font>人
+                </p>
+                <p>
+                    <strong style="color: Red;">推广流程：</strong><span class="process"><em class="choosegame"></em>选择游戏</span><span
+                        class="process">→</span><span class="process"><em class="tglink"></em>推广链接</span><span
+                            class="process">→</span><span class="process"><em class="share"></em>分享提成</span>
+                </p>
+            </div>
+            <a style="margin-left: 180px;" href="/SpreadCenter/Login">退出登陆</a>
+        </div>
+        <div class="tgmain">
+            <div class="sidebar">
+                <!--充值大标题--->
+                <div id="KQ_BANK" class="payment @ViewData["YejiOn"]" onclick="window.location.href='/SpreadCenter/';">
+                    <span class="white_border"><font>我的业绩</font><span class="order_arrow"></span></span>
+                </div>
+                <div id="JUN_BANK" class="payment @ViewData["GameOn"]" onclick="window.location.href='/SpreadCenter/SpreadGame';">
+                    <span class="white_border"><font>选择推广链接</font><span class="order_arrow"></span></span>
+                </div>
+                <div id="ALI" style="@ViewData["Style"]" class="payment @ViewData["UnderOn"]" onclick="window.location.href='/SpreadCenter/AddUnderUser';" >
+                    <span class="white_border"><font>添加下属</font><span class="order_arrow"></span></span>
+                </div>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

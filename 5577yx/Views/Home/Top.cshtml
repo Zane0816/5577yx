@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<div id="ht">
+    <div id="header">
+        <div id="hc">
+            <div id="hl">
+                <a>欢迎光临</a>5577游戏平台，<span id="HeadInfo">@Html.Raw(ViewData["HeadInfo"])</span>
+            </div>
+            <div id="hr">
+                <img src="/Images/top_04.png"><a href="javascript:;" onclick="this.style.behavior=&#39;url(#default#homepage)&#39;;this.setHomePage(&#39;http://www.5577yx.com/&#39;);">设为首页</a><img
+                    src="/Images/top_06.png"><a target="_top" href="javascript:window.external.addFavorite('http://www.5577yx.com/','5577游戏平台');">加为收藏</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mainnav">
+    <div class="nav">
+        <ul>
+            <li class="logo"><a href="Index.htm">
+                <img src="/Images/lekou.gif"></a></li>
+            <li><a class="n @ViewData["HomeOn"]" href="/Home">网站首页</a> </li>
+            <li><a class="n @ViewData["GameCenterOn"]" href="/GameCenter">游戏中心</a> </li>
+            <li><a class="n @ViewData["UserCenterOn"]" href="/UserCenter">用户中心</a> </li>
+            <li><a class="n @ViewData["PayCenterOn"] " href="/PayCenter">充值中心</a> </li>
+            <li><a class="n @ViewData["GameGiftOn"]" href="/GameGift">游戏礼包</a> </li>
+            <li><a class="n @ViewData["NewsCenterOn"]" href="/NewsCenter">新闻公告</a> </li>
+            <li><a class="n" href="http://bbs.5577yx.com">游戏论坛</a> </li>
+        </ul>
+    </div>
+</div>

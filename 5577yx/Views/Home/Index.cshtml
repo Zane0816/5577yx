@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "5577yx首页";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+
+@*@RenderPage("~/Views/Home/Left.cshtml")*@
+@Html.Action("Left", "Home")
+<div style="float: left; margin-left: 10px" id="index_right">
+    <div id="flash" style="overflow: hidden; height: 216px;" class="mb10">
+        <div style="position: relative; width: 507px; height: 212px; float: left;">
+            <div id="slider" style="width: 505px; height: 212px; overflow: hidden;">
+                <ul id="imgs" style="width: 100000px; margin-left: -1515px;">
+                    @Html.Raw(ViewData["IndexPic"]);
+                </ul>
+            </div>
+            <ol id="controls">
+                <li id="controls1" class=""><a rel="0" href="javascript:void(0);"></a></li>
+                <li id="controls2" class=""><a rel="1" href="javascript:void(0);"></a></li>
+                <li id="controls3" class=""><a rel="2" href="javascript:void(0);"></a></li>
+                <li id="controls4" class="current"><a rel="3" href="javascript:void(0);"></a></li>
+                <li id="Li1" class=""><a rel="3" href="javascript:void(0);"></a></li>
+            </ol>
+        </div>
+        <div class="news">
+            <div class="hd">
+                <ul class="newsUl">
+                    <li class="current"><a href="javascript:void(0);">公告</a> </li>
+                    <li><a href="javascript:void(0);">活动</a> </li>
+                    <li class="more"><a href="/NewsCenter/">more</a> </li>
+                </ul>
+            </div>
+            <div class="area area0">
+                @Html.Raw(ViewData["NewsGG"])
+            </div>
+            <div class="area area1">
+                @Html.Raw(ViewData["NewsHD"])
+            </div>
+        </div>
+    </div>
+    <!--推荐游戏-->
+    <div style="width: 744px; float: left; overflow: hidden;" class="game">
+        <h1>
+            <span>热门游戏</span>
+        </h1>
+        <div style="height: 170px; width: 740px; margin-left: 2px;">
+            @Html.Raw(ViewData["HotGame"])
+        </div>
+    </div>
+</div>
+<!--选择游戏-->
+<div style="width: 744px; float: left; margin-left: 10px; overflow: hidden;" class="game">
+    <h1>
+        <span>推荐游戏</span><a href="/GameCenter/">更多游戏>></a>
+    </h1>
+    <div style="padding: 5px 20px;">
+        @Html.Raw(ViewData["TjGame"])
+    </div>
+</div>
+<div style="float: left; width: 100%; border: 1px solid #c9c9c9; margin-top: 5px">
+    <span class="spanlink1" title="展开更多连接"></span>
+    <div class="aLink" style="height: auto; max-height: 200px; overflow: auto;">
+        @Html.Raw(ViewData["YqLink"])
+    </div>
+    <div class="moreLink">
+    </div>
+</div>
+@*<div id="online_qq_layer">
+    <div id="online_qq_tab">
+        <a id="floatShow" style="display: block" href="javascript:void(0);">收缩</a>
+        <a id="floatHide" style="display:none" href="javascript:void(0);">展开</a>
+    </div>
+    <div id="onlineService" style="display: none;">
+
+        <div class="conts">
+            @*<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=2067257264" target="_blank" id="qqkf">企业QQ交谈<span>7X24小时在线</span></a>*@
+            @*<h3>400-009-4577</h3>
+            <ul id="qqlists">
+                <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2067257264&site=qq&menu=yes"><img src="http://wpa.qq.com/pa?p=2:2067257264:51" alt="点击这里给我发消息">小余</a></li>
+            </ul>
+        </div>
+    </div>
+</div>*@
+

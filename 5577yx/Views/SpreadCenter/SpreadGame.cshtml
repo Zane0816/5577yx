@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "推广游戏";
+    Layout = "~/Views/SpreadCenter/SpreadLayout.cshtml";
+}
+
+<div class="main">
+    <div class="choose">
+        <div class="title">
+            你的账户已经激活，可以开始推广了
+        </div>
+        <p style="font-size: 14px; font: 微软雅黑; color: #FF6600; margin-top: 10px; padding-left: 20px;">
+            请您先选取推广游戏图标，然后复制文本框内推广链接
+        </p>
+        <p style="margin-top: 15px; padding-left: 20px;">
+            <textarea name="txturl" id="txturl" readonly="readonly" style="width: 660px; height: 120px;">请复制 @ViewData["GameName"] 的推广链接，链接地址：
+ http://tg.5577yx.com/?action=@ViewData["Action"] </textarea>
+        </p>
+
+        <div>
+        </div>
+    </div>
+    <div class="game">
+        <div class="topgame">
+            选择要推广的游戏
+        </div>
+        <div class="line">
+            <ul>
+                @Html.Raw(ViewData["HtmlGame"])
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    function GetSpreadText(a, b) {
+        $("#txturl").html("请复制 " + a + " 的推广链接，链接地址： \n http://tg.5577yx.com/?action=" + b);
+    }
+</script>

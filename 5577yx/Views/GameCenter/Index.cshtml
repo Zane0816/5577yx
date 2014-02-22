@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "游戏大厅";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+
+@Html.Action("Left", "Home")
+<div id="index_right" style="border: 1px solid #E06F00; width: 735px; padding: 5px; background-color: White;">
+    <!--推荐游戏-->
+    <div style="width: 732px; float: left; overflow: hidden;" class="game">
+        <h1>
+            <span>热门游戏</span></h1>
+        <div style="height: 170px; width: 740px; margin-left: 2px;">
+            @Html.Raw(ViewData["HotGame"])
+        </div>
+    </div>
+    <!--选择游戏-->
+    <div style="width: 732px; float: left; overflow: hidden; margin-top: 6px;" class="game">
+        <h1>
+            <span>所有游戏列表</span></h1>
+        <div style="padding: 5px 20px;">
+            @Html.Raw(ViewData["AllGame"])
+        </div>
+    </div>
+</div>
+

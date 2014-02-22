@@ -1,0 +1,202 @@
+﻿@{
+    Layout = null;
+}
+
+<div id="side">
+    <div id="login_form" class="loginbox" @Html.Raw(ViewData["LoginStyle"])>
+        <div class="wrap">
+            <div class="topbt">
+                <a href="/Home/Reg" target="_blank" title="快速注册,乐扣游戏欢迎您的加入">快速注册,乐扣游戏欢迎您的加入</a>
+            </div>
+            <div class="info_wrap">
+                <div class="info_box" id="info_box">
+                    <div class="info_box_inner">
+                        <div id="loginerror" class="login_error">
+                        </div>
+                    </div>
+                    <div class="info_box_bt">
+                    </div>
+                </div>
+            </div>
+            <div class="login_form">
+                <form method="post" onsubmit="return KsLogin()">
+                    <div id="loginForm">
+                        <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input name="UserName" type="text" value="@ViewData["UserName"]" id="UserName" class="usernameinput" >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 15px; padding-bottom: 5px;">
+                                        <input name="PWD" type="password" id="PWD" class="passwordinput" value="@ViewData["PWD"]">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="autologin">
+                                            <input name="ck1" type="checkbox" id="ck1" checked="checked"><span>记住账号</span>
+                                            <span class="get_pwd"><a href="/UserCenter/FindPwd" title="找回密码">找回密码</a></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span style="height: 20px; margin-left: 20px; color: Red; font-weight: bold;">&nbsp;</span>
+                                        <span style="height: 20px; color: Red; font-weight: bold;" class="error"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="login_btn">
+                                            <input type="submit" value="" class="btn_login">
+                                            <a href="/Home/Reg" target="_blank" class="btn_reg"></a>
+                                        </div>
+                                        <div class="clear">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="logined" class="loginbox" @Html.Raw(ViewData["LoginedStyle"])>
+        <div class="wrap">
+            <div class="topbt">
+            </div>
+            <div class="info_wrapspace">
+                <div class="info_boxspace" id="info_box_safe">
+                    <div class="info_box_inner">
+                        <div id="loginerror_safe" class="login_error">
+                        </div>
+                    </div>
+                    <div class="info_box_bt">
+                    </div>
+                </div>
+            </div>
+            <ul class="userinfo" style="margin-bottom: 6px;">
+                <li>您好：<span class="username" id="UserNameed">@ViewData["UserNameed"]</span></li>
+                <li>钻石：<span class="platmoney" style="margin-right: 6px;" id="Money">@ViewData["Money"]</span><img src="/images/vip11_0.jpg"></li>
+            </ul>
+            <div class="usernav">
+                <a href="/UserCenter/">用户中心</a> <a href="/PayCenter/">充值</a> <a href="/UserCenter/LoginOut">退出</a>
+            </div>
+            <div class="userlist">
+                <ul class="userlist_menu">
+                    <li class="first current">最近登录</li>
+                    <li>账户管理</li>
+                </ul>
+                <div class="list">
+                    <ul class="userserver userlistgroup userlistgroup0">
+                        <dd id="OnlineLog" style="text-align: center">
+                            @Html.Raw(ViewData["OnlineLogHtml"]);
+                        </dd>
+                    </ul>
+                    <ul class="hotgame userlistgroup userlistgroup1">
+                        <dd>
+                            <div class="left_la1">
+                            </div>
+                            <div class="login_kuaijie_a">
+                                <a href="/UserCenter/MyInfoEdit">资料修改</a>
+                            </div>
+                            <div class="left_la2">
+                            </div>
+                            <div class="login_kuaijie_a">
+                                <a href="/PayCenter/">快速充值</a>
+                            </div>
+                            <div class="left_la3">
+                            </div>
+                            <div class="login_kuaijie_a">
+                                <a href="/UserCenter/UserSafe">安全设置</a>
+                            </div>
+                            <div class="left_la4">
+                            </div>
+                            <div class="login_kuaijie_a">
+                                <a href="/UserCenter/UpdatePwd">密码修改</a>
+                            </div>
+                        </dd>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newKf" style="background-color: White;">
+        <h1>
+            <img src="/images/fire.png" width="25px">最新开服
+        </h1>
+        <table cellpadding="0" cellspacing="0" width="100%" class="listTable">
+            <thead>
+                <tr>
+                    <th width="10px">&nbsp;
+                    </th>
+                    <th width="50px">日期
+                    </th>
+                    <th width="50px">时间
+                    </th>
+                    <th width="80px" class="name">游戏名称
+                    </th>
+                    <th width="38px">服数
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="NewsServer">
+                @Html.Raw(ViewData["NewServerHtml"])
+            </tbody>
+        </table>
+    </div>
+    <!--用户中心-->
+    <div class="newKf" style="background-color: White;">
+        <h1 class="userH1">
+            <img src="/images/fastforward.png" width="25px">快捷通道
+        </h1>
+        <table cellpadding="0" cellspacing="0" width="100%" class="userTable">
+            <tbody>
+                <tr>
+                    <td>
+                        <em class="zc"></em><a href="/Home/Reg">注册账号</a>
+                    </td>
+                    <td>
+                        <em class="cz"></em><a href="/PayCenter/">快速充值</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <em class="qh"></em><a href="/UserCenter/FindPwd">取回密码</a>
+                    </td>
+                    <td>
+                        <em class="xg"></em><a href="/UserCenter/MyInfoEdit">修改资料</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <em class="ss"></em><a href="/UserCenter/FindPwd">账号申诉</a>
+                    </td>
+                    <td style="padding-bottom: 10px">
+                        <em class="kf"></em><a href="http://wpa.qq.com/msgrd?v=3&uin=2067257264&site=qq&menu=yes">在线客服</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-top: 1px dashed #ccc;" colspan="2">
+                        <span style="float: left; display: inline-block;"><em class="tel"></em>客服热线：</span>
+                        <span style="float: left; font-family: Verdana; font-size: 14px; width: 120px; display: inline-block; font-weight: bold; color: #E06F00;">400-009-4577</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    $(".userlist_menu li").each(function (i, k) {
+        var li = $(this);
+        li.mouseover(function () {
+            $('.userlist_menu li').removeClass('current');
+            $(this).addClass('current');
+            $(".list ul").hide().attr("style", 'display: none;');
+            $(".list ul:eq(" + i + ")").show().attr("style", 'display: block;');
+        });
+    });
+</script>

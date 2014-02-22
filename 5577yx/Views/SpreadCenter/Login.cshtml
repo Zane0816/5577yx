@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>推广员登录</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/sty.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+</head>
+<body>
+    <div class="loginArea" style="width: 450px;">
+        <h1>快速登录您的5577游戏推广员账户
+        </h1>
+        <div class="login_box">
+            <form method="post" onsubmit="return GameSpreadUserLogin()">
+                <div id="login">
+                    <label class="log_user" for="ID-U-0">
+                        <span>用户名：</span><input name="UserName" type="text" value="@ViewData["UserName"]" id="UserName"></label>
+                    <label class="log_password" for="ID-U-1">
+                        <span>密&nbsp;&nbsp;码：</span>
+                        <input name="PWD" type="password" id="PWD" value="@ViewData["PWD"]"></label>
+                    <label class="code_label_position" for="ID-U-2">
+                        <span>验证码：</span>
+                        <input name="Code" type="text" id="Code" value="" style="width: 80px;">
+                        <img src="../Models/VerifyCode.ashx" width="70" height="22" alt="点击切换验证码" title="点击切换验证码" style="margin-top: 2px; vertical-align: top; cursor: pointer;" onclick="ToggleCode(this, '../Models/VerifyCode.ashx');return false;">
+                    </label>
+                    <input type="submit" name="btnlogin" value="" id="btnlogin" class="btn_login">
+                    <span class="auto_span" title="请勿在公共电脑使用此功能"><span class="ck">
+                        <input id="ck1" type="checkbox" name="ck1" checked="checked"></span>
+                        <label for="auto_label" style="vertical-align: middle">
+                            记住登录</label></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
