@@ -10,7 +10,10 @@
     <title>5577yx-江湖问剑微端</title>
     <link href="~/Style/jhwj/style.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
     <script src="~/Scripts/jhwj/main.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
 </head>
 <body>
     <div>
@@ -84,32 +87,33 @@
                         </ul>
                     </div><!--选项卡 end-->
                 </div>
-
-                <div class="Login Login1">
-                    <!--登录-->
-                    <table cellspacing="0" cellpadding="0" width="100%" border="0">
-                        <tbody>
-                            <tr>
-                                <td width="18%" class="name"><img src="/images/jhwj/name.png" /></td>
-                                <td><input type="text" class="login_bt2" /></td>
-                            </tr>
-                            <tr><td colspan="2" height="20" class="tip"><span style="display:none;">帐号密码错误</span></td></tr>
-                            <tr>
-                                <td class="name"><img src="/images/jhwj/name1.png" /></td>
-                                <td><input type="password" class="login_bt2" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <input type="submit" value="" class="login_bt1" />
-                    <div class="wjmm">
-                        <span class="box1"></span>
-                        <span>记住账号</span>
-                        <span>|</span>
-                        <span><a href="#" style="text-decoration:underline;">忘记密码</a></span>
-                        <span>|</span>
-                        <span><a href="#" style="color:#e99f47;">注册账号</a></span>
-                    </div>
-                </div><!--登录 end-->
+                <form onsubmit="return KsLogin4()" method="post">
+                    <div class="Login Login1">
+                        <!--登录-->
+                        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                            <tbody>
+                                <tr>
+                                    <td width="18%" class="name"><img src="/images/jhwj/name.png" /></td>
+                                    <td><input id="UserName" name="UserName" type="text" class="login_bt2" /></td>
+                                </tr>
+                                <tr><td colspan="2" height="20" class="tip"><span style="display:none;">帐号密码错误</span></td></tr>
+                                <tr>
+                                    <td class="name"><img src="/images/jhwj/name1.png" /></td>
+                                    <td><input id="PWD" name="PWD" type="password" class="login_bt2" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input type="submit" value="" class="login_bt1" />
+                        <div class="wjmm">
+                            <span class="box1"><input id="ck1" name="ck1" type="checkbox" checked="checked" style="visibility:hidden;"/></span>
+                            <span>记住账号</span>
+                            <span>|</span>
+                            <span><a href="/UserCenter/FindPwd" style="text-decoration:underline;">忘记密码</a></span>
+                            <span>|</span>
+                            <span><a href="/Home/Reg" style="color:#e99f47;">注册账号</a></span>
+                        </div>
+                    </div><!--登录 end-->
+                </form>
             </div>
         </div>
     </div>

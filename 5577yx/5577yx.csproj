@@ -156,6 +156,7 @@
     <Content Include="Content\gjqx\start.swf" />
     <Content Include="Content\xxas\mediaplayer.swf" />
     <Content Include="Content\xxas\start.swf" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\Admin\AdminFunction.js" />
     <Content Include="Scripts\Admin\assets\countdown\jquery.countdown.css" />
@@ -585,6 +586,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\jhwj\Wd.cshtml" />
+    <Content Include="Views\jhwj\WdServers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -736,6 +738,9 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

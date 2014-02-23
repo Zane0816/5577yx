@@ -513,7 +513,7 @@ function GameUserKsReg() {
 }
 
 function GameUserLogin() {
-    if (!($("#UserName"))) {
+    if (!VerifyIsNull($("#UserName"))) {
         jsprint("用户名不能为空！", "", "Error");
         return false;
     }
@@ -540,7 +540,7 @@ function GameUserLogin() {
 }
 
 function GameSpreadUserLogin() {
-    if (!($("#UserName"))) {
+    if (!VerifyIsNull($("#UserName"))) {
         jsprint("用户名不能为空！", "", "Error");
         return false;
     }
@@ -567,7 +567,7 @@ function GameSpreadUserLogin() {
 }
 
 function KsLogin() {
-    if (!($("#UserName"))) {
+    if (!VerifyIsNull($("#UserName"))) {
         jsprint("用户名不能为空！", "", "Error");
         return false;
     }
@@ -590,7 +590,7 @@ function KsLogin() {
 }
 
 function KsLogin2() {
-    if (!($("#UserName"))) {
+    if (!VerifyIsNull($("#UserName"))) {
         alert("用户名不能为空！");
         return false;
     }
@@ -613,7 +613,7 @@ function KsLogin2() {
 }
 
 function KsLogin3() {
-    if (!($("#UserName"))) {
+    if (!VerifyIsNull($("#UserName"))) {
         alert("用户名不能为空！");
         return false;
     }
@@ -638,6 +638,30 @@ function KsLogin3() {
     });
     return false;
 }
+
+function KsLogin4() {
+    if (!VerifyIsNull($("#UserName"))) {
+        alert("用户名不能为空！");
+        return false;
+    }
+    if (!VerifyIsNull($("#PWD"))) {
+        alert("密码不能为空！");
+        return false;
+    }
+    $("form").ajaxSubmit({
+        url: "/Home/KsLogin",
+        type: "post",
+        success: function (data, textStatus) {
+            if (data == "True") {
+                location.href = "WdServers";
+            } else {
+                alert(data);
+            }
+        }
+    });
+    return false;
+}
+
 
 function AdminLogin() {
     if (!VerifyIsNull($("#txtUserName"))) {

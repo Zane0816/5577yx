@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="VerifyCode.ashx.cs" Class="_6qm.Models.VerifyCode" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="VerifyCode.ashx.cs" Class="_5577yx.Models.VerifyCode" %>

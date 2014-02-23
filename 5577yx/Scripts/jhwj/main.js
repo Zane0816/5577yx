@@ -17,7 +17,7 @@ $(function(){
 		$('#con_one_3').show();
 	});
 	
-	$(".box1").click(function(){
+	$(".box1").click(function () {
 		$(this).toggleClass("box2");
 	});
 	

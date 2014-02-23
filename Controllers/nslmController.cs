@@ -126,10 +126,10 @@ namespace Game.Controllers
                             ServerHtml += "<li><a  class=\"s1\"><span>" + gs.Name + "</span>停服维护</a></li>";
                             break;
                         case 3:
-                            ServerHtml += "<li><a href=\"LoginGame?S=" + gs.QuFu + "\" target=\"_game\" class=\"s6\"><span>" + gs.Name + "</span>流畅</a></li>";
+                            ServerHtml += "<li><a href=\"/" + g.GameNo + "/LoginGame?S=" + gs.QuFu + "\" target=\"_game\" class=\"s6\"><span>" + gs.Name + "</span>流畅</a></li>";
                             break;
                         case 4:
-                            ServerHtml += "<li><a href=\"LoginGame?S=" + gs.QuFu + "\" target=\"_game\" class=\"s4\"><span>" + gs.Name + "</span>火爆</a></li>";
+                            ServerHtml += "<li><a href=\"/" + g.GameNo + "/LoginGame?S=" + gs.QuFu + "\" target=\"_game\" class=\"s4\"><span>" + gs.Name + "</span>火爆</a></li>";
                             break;
                         default:
                             break;

@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="Function.ashx.cs" Class="_6qm.Models.Function" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="Function.ashx.cs" Class="_5577yx.Models.Function" %>

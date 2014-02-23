@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="upload_ajax.ashx.cs" Class="_6qm.Models.upload_ajax" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="upload_ajax.ashx.cs" Class="_5577yx.Models.upload_ajax" %>
