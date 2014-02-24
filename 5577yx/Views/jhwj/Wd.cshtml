@@ -21,8 +21,8 @@
             <!--主体-->
             <div class="LoginBg">
                 <p class="Link1">
-                    <a href="#" title="官方网站"><img src="/images/jhwj/bt2.png" /></a>
-                    <a href="#" title="论坛活动"><img src="/images/jhwj/bt3.png" /></a>
+                    <a href="/jhwj/" title="官方网站"><img src="/images/jhwj/bt2.png" /></a>
+                    <a href="http://bbs.5577yx.com" title="论坛活动"><img src="/images/jhwj/bt3.png" /></a>
                 </p>
                 <div class="NewBg">
                     <div id="focus" class="d1">
@@ -65,25 +65,12 @@
                             <a href="javascript:;" id="one3">新闻动态</a>
                         </div>
                         <ul id="con_one_1" class="yin" style="display:block;">
-                            <li><span></span><a href="#">【13.12.2】跟我玩《醉江湖》101</a></li>
-                            <li><span></span><a href="#">【13.12.2】跟我玩《醉江湖》101</a></li>
-                            <li><span></span><a href="#">【13.12.2】跟我玩《醉江湖》101</a></li>
-                            <li><span></span><a href="#">【13.12.2】跟我玩《醉江湖》101</a></li>
-
-                            <li class="more"><a href="#">查看更多</a></li>
+                            @Html.Raw(ViewData["News"])
+                            <li class="more"><a href="/NewsCenter/">查看更多</a></li>
                         </ul>
                         <ul id="con_one_2" class="yin">
-                            <li><span></span><a href="#">【13.12.2】跟我玩《醉江湖》101</a></li>
-                            <li><span></span><a href="#">【13.12.2】跟我玩《醉江湖》101</a></li>
-                            <li><span></span><a href="#">【13.12.2】跟我玩《醉江湖》101</a></li>
-
-                            <li class="more"><a href="#">查看更多</a></li>
-                        </ul>
-                        <ul id="con_one_3" class="yin">
-                            <li><span></span><a href="#">【13.12.2】跟我玩《醉江湖》101</a></li>
-                            <li><span></span><a href="#">【13.12.2】跟我玩《醉江湖》101</a></li>
-
-                            <li class="more"><a href="#">查看更多</a></li>
+                            @Html.Raw(ViewData["News"])
+                            <li class="more"><a href="/NewsCenter/">查看更多</a></li>
                         </ul>
                     </div><!--选项卡 end-->
                 </div>

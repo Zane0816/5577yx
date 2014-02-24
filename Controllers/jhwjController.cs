@@ -15,8 +15,8 @@ namespace Game.Controllers
         //
         // GET: /jhwj/
         CommonGame cg = new CommonGame();
-        Games g = new Games();
         GamesManager gm = new GamesManager();
+        Games g = new GamesManager().GetGame("jhwj");
         ServersMananger sm = new ServersMananger();
         HtmlHelper hh = new HtmlHelper();
         NewsManager nm = new NewsManager();
@@ -49,13 +49,29 @@ namespace Game.Controllers
 
         public ActionResult Wd()
         {
+            List<News> Newlist = new List<News>();
+            Newlist = nm.GetNews(5, 2, g.Id);
+            string NewsHtml = "";
+            foreach (News n in Newlist)
+            {
+                NewsHtml += "<li><span class=\"date fr\">" + n.ReleaseTime + "</span>[公告]<a href=\"/NewsCenter/News?N=" + n.Id + "\" target=\"_self\"title=\"" + n.Title + "\">" + (n.Title.Length < 15 ? n.Title : n.Title.Substring(0, 15)) + "</strong></a></li>";
+            }
+            ViewData["News"] = NewsHtml;
+
+            List<News> GGNewlist = new List<News>();
+            GGNewlist = nm.GetNews(5, 4, g.Id);
+            string GGNewsHtml = "";
+            foreach (News n in GGNewlist)
+            {
+                GGNewsHtml += "<li><span class=\"date fr\">" + n.ReleaseTime + "</span>[公告]<a href=\"/NewsCenter/News?N=" + n.Id + "\" target=\"_self\"title=\"" + n.Title + "\">" + (n.Title.Length < 15 ? n.Title : n.Title.Substring(0, 15)) + "</strong></a></li>";
+            }
+            ViewData["GGNews"] = GGNewsHtml;
             return View();
         }
 
         public ActionResult WdServers()
         {
             int UserId = BBRequest.GetUserId();
-            g = gm.GetGame("jhwj");
             if (UserId > 0)
             {
                 GameUser gu = new GameUser();
