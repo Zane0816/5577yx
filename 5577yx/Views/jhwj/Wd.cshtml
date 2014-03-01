@@ -21,8 +21,8 @@
             <!--主体-->
             <div class="LoginBg">
                 <p class="Link1">
-                    <a href="/jhwj/" title="官方网站"><img src="/images/jhwj/bt2.png" /></a>
-                    <a href="http://bbs.5577yx.com" title="论坛活动"><img src="/images/jhwj/bt3.png" /></a>
+                    <a href="/jhwj/" target="_blank" title="官方网站"><img src="/images/jhwj/bt2.png" /></a>
+                    <a href="http://bbs.5577yx.com" target="_blank" title="论坛活动"><img src="/images/jhwj/bt3.png" /></a>
                 </p>
                 <div class="NewBg">
                     <div id="focus" class="d1">
@@ -62,15 +62,14 @@
                             <span>|</span>
                             <a href="javascript:;" id="one2">游戏活动</a>
                             <span>|</span>
-                            <a href="javascript:;" id="one3">新闻动态</a>
                         </div>
                         <ul id="con_one_1" class="yin" style="display:block;">
                             @Html.Raw(ViewData["News"])
-                            <li class="more"><a href="/NewsCenter/">查看更多</a></li>
+                            <li class="more"><a href="/NewsCenter/" target="_blank">查看更多</a></li>
                         </ul>
                         <ul id="con_one_2" class="yin">
                             @Html.Raw(ViewData["News"])
-                            <li class="more"><a href="/NewsCenter/">查看更多</a></li>
+                            <li class="more"><a href="/NewsCenter/" target="_blank">查看更多</a></li>
                         </ul>
                     </div><!--选项卡 end-->
                 </div>
@@ -95,9 +94,9 @@
                             <span class="box1"><input id="ck1" name="ck1" type="checkbox" checked="checked" style="visibility:hidden;"/></span>
                             <span>记住账号</span>
                             <span>|</span>
-                            <span><a href="/UserCenter/FindPwd" style="text-decoration:underline;">忘记密码</a></span>
+                            <span><a href="/UserCenter/FindPwd" target="_blank" style="text-decoration:underline;">忘记密码</a></span>
                             <span>|</span>
-                            <span><a href="/Home/Reg" style="color:#e99f47;">注册账号</a></span>
+                            <span><a href="/Home/Reg" target="_blank" style="color:#e99f47;">注册账号</a></span>
                         </div>
                     </div><!--登录 end-->
                 </form>

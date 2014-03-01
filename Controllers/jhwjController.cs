@@ -54,7 +54,7 @@ namespace Game.Controllers
             string NewsHtml = "";
             foreach (News n in Newlist)
             {
-                NewsHtml += "<li><span class=\"date fr\">" + n.ReleaseTime + "</span>[公告]<a href=\"/NewsCenter/News?N=" + n.Id + "\" target=\"_self\"title=\"" + n.Title + "\">" + (n.Title.Length < 15 ? n.Title : n.Title.Substring(0, 15)) + "</strong></a></li>";
+                NewsHtml += "<li><span></span><a href=\"/NewsCenter/News?N=" + n.Id + "\" target=\"_blank\">" + (n.Title.Length < 15 ? n.Title : n.Title.Substring(0, 15)) + "</a></li></li>";
             }
             ViewData["News"] = NewsHtml;
 
@@ -63,7 +63,7 @@ namespace Game.Controllers
             string GGNewsHtml = "";
             foreach (News n in GGNewlist)
             {
-                GGNewsHtml += "<li><span class=\"date fr\">" + n.ReleaseTime + "</span>[公告]<a href=\"/NewsCenter/News?N=" + n.Id + "\" target=\"_self\"title=\"" + n.Title + "\">" + (n.Title.Length < 15 ? n.Title : n.Title.Substring(0, 15)) + "</strong></a></li>";
+                GGNewsHtml += "<li><span></span><a href=\"/NewsCenter/News?N=" + n.Id + "\" target=\"_blank\">" + (n.Title.Length < 15 ? n.Title : n.Title.Substring(0, 15)) + "</a></li></li>";
             }
             ViewData["GGNews"] = GGNewsHtml;
             return View();
@@ -86,13 +86,21 @@ namespace Game.Controllers
                 if (ol != null)
                 {
                     GameServer Llqf = sm.GetGameServer(ol.ServerId);
-                    ViewData["LLHref"] = "/" + g.GameNo + "/LoginGame?S=" + Llqf.QuFu;
+                    if (Llqf.State == 1 || Llqf.State == 2)
+                    {
+                        ViewData["LLHref"] = "#";
+                    }
+                    else
+                    {
+
+                        ViewData["LLHref"] = gm.LoginUrl(g.Id, UserId, Llqf.Id,1);
+                    }
                     ViewData["LLName"] = Llqf.Name;
                 }
                 if (g.tjqf > 0)
                 {
                     GameServer tjqf = sm.GetGameServer(g.tjqf);
-                    ViewData["TjqfHref"] = "/" + g.GameNo + "/LoginGame?S=" + tjqf.QuFu;
+                    ViewData["TjqfHref"] = gm.LoginUrl(g.Id, UserId, tjqf.Id,1);
                     ViewData["TjqfName"] = tjqf.Name;
                 }
                 List<GameServer> gsList = new List<GameServer>();
@@ -109,10 +117,10 @@ namespace Game.Controllers
                             ServerHtml += "<a><span class=\"gray\"></span>" + gs.Name + "</a>";
                             break;
                         case 3:
-                            ServerHtml += "<a href=\"" + g.GameNo + "/LoginGame?S=" + gs.QuFu + "\"><span class=\"green\"></span>" + gs.Name + "</a>";
+                            ServerHtml += "<a href=\"" + gm.LoginUrl(g.Id, UserId, gs.Id,1) + "\"><span class=\"green\"></span>" + gs.Name + "</a>";
                             break;
                         case 4:
-                            ServerHtml += "<a href=\"" + g.GameNo + "/LoginGame?S=" + gs.QuFu + "\"><span class=\"red\"></span>" + gs.Name + "</a>";
+                            ServerHtml += "<a href=\"" + gm.LoginUrl(g.Id, UserId, gs.Id,1) + "\"><span class=\"red\"></span>" + gs.Name + "</a>";
                             break;
                         default:
                             break;

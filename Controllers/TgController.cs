@@ -141,7 +141,7 @@ namespace Game.Controllers
                     {
                         gu.annalID = annalID;
                         gu.From_Url = "BengBeng";
-                        string SelUrl = "http://www.bengbeng.com/reannal.php?adID=2439&annalID=" + annalID + "&idCode=" + gu.UserName + "&doukey=" + DESEncrypt.Md5("2439" + annalID + gu.UserName + "06bd24c6124b2dd7", 32);
+                        string SelUrl = "http://www.bengbeng.com/reannal.php?adID=2618&annalID=" + annalID + "&idCode=" + gu.UserName + "&doukey=" + DESEncrypt.Md5("2618" + annalID + gu.UserName + "06bd24c6124b2dd7", 32);
                         string SleRes = Utils.GetWebPageContent(SelUrl);
                         Dictionary<string, string> Jd = Common.Json.JsonToArray(SleRes);
                         if (Jd["result"] != "1")

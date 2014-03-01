@@ -17,22 +17,22 @@
         <!--主体-->
         <div class="LoginBg">
             <p class="Link1">
-                <a href="/jhwj/" title="官方网站"><img src="/images/jhwj/bt2.png" /></a>
-                <a href="http://bbs.5577yx.com" title="论坛活动"><img src="/images/jhwj/bt3.png" /></a>
+                <a href="/jhwj/" target="_blank" title="官方网站"><img src="/images/jhwj/bt2.png" /></a>
+                <a href="http://bbs.5577yx.com" target="_blank" title="论坛活动"><img src="/images/jhwj/bt3.png" /></a>
             </p>
             <div class="Login_on">
                 <!--登录后-->
                 <div class="personal">
                     <p class="fl">
                         @ViewData["UserName"]
-                        <a href="/UserCenter/">用户中心</a>
+                        <a href="/UserCenter/" target="_blank">用户中心</a>
                         <span>|</span>
                         <a href="Wd">注销</a>
                     </p>
                     <p class="fr"><img src="/images/jhwj/ico.png" /></p>
                 </div>
                 <div class="Gamebox">
-                    <p><a href="/UserCenter/UserSafe">完善密保质料 提高账户安全>></a></p>
+                    <p><a href="/UserCenter/UserSafe" target="_blank">完善密保质料 提高账户安全>></a></p>
                     <div class="zjfwq"><a href="@ViewData["LLHref"]"><span class="green"></span>@ViewData["LLName"]</a></div>
                     @*<div class="choose"><input type="text" class="input_1" value="10" /><input type="submit" value="" class="input_2" /></div>*@
                     <a href="@ViewData["LLHref"]" class="start" title="进入游戏"><img src="/images/jhwj/start.jpg" /></a>

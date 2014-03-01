@@ -66,10 +66,10 @@ namespace Game.Controllers
                             ServerHtml += "<a class=\"li_weihu\">" + gsList[j].Name + "</a>";
                             break;
                         case 3:
-                            ServerHtml += "<a class=\"li_liuchang\" href=\"/"+g.GameNo+"/LoginGame?S=" + gsList[j].QuFu + "\" target=\"_blank\">" + gsList[j].Name + "</a>";
+                            ServerHtml += "<a class=\"li_liuchang\" href=\"/" + g.GameNo + "/LoginGame?S=" + gsList[j].QuFu + "\" target=\"_blank\">" + gsList[j].Name + "</a>";
                             break;
                         case 4:
-                            ServerHtml += "<a class=\"li_hot\" href=\"/"+g.GameNo+"/LoginGame?S=" + gsList[j].QuFu + "\" target=\"_blank\">" + gsList[j].Name + "</a>";
+                            ServerHtml += "<a class=\"li_hot\" href=\"/" + g.GameNo + "/LoginGame?S=" + gsList[j].QuFu + "\" target=\"_blank\">" + gsList[j].Name + "</a>";
                             break;
                         default:
                             break;
@@ -133,7 +133,7 @@ namespace Game.Controllers
             int UserId = BBRequest.GetUserId();
             if (UserId > 0)
             {
-                ViewData["LoginUrl"] = gm.LoginUrl(g.Id, UserId, gs.Id);
+                ViewData["LoginUrl"] = gm.LoginUrl(g.Id, UserId, gs.Id, 0);
                 gum.UpdateLastLogin(UserId);
                 OnlineLog ol = new OnlineLog(0, UserId, g.Id, gs.Id, DateTime.Now, 0, 0);
                 new OnlineLogManager().AddOnlineLog(ol);
@@ -150,7 +150,7 @@ namespace Game.Controllers
                     {
                         BBRequest.WriteUserId(gu.Id);
                         gum.UpdateLastLogin(gu.Id);
-                        ViewData["LoginUrl"] = gm.LoginUrl(g.Id, gu.Id, gs.Id);
+                        ViewData["LoginUrl"] = gm.LoginUrl(g.Id, gu.Id, gs.Id, 0);
                         OnlineLog ol = new OnlineLog(0, gu.Id, g.Id, gs.Id, DateTime.Now, 0, 0);
                         new OnlineLogManager().AddOnlineLog(ol);
                     }

@@ -265,7 +265,7 @@ namespace Game.Manager
         /// <param name="UserId">用户Id</param>
         /// <param name="ServerId">服务器Id</param>
         /// <returns>返回登陆地址</returns>
-        public string LoginUrl(int GameId, int UserId, int ServerId)
+        public string LoginUrl(int GameId, int UserId, int ServerId, int IsPC)
         {
             GameUserInfo gui = new GameUserInfo();
             Games g = new Games();
@@ -273,69 +273,69 @@ namespace Game.Manager
             switch (g.GameNo)
             {
                 case "dxz":
-                    return new Game_Dxz().Login(UserId, ServerId, 0);
+                    return new Game_Dxz().Login(UserId, ServerId, IsPC);
                 case "sjsg":
-                    return new Game_Sjsg().Login(UserId, ServerId, 0);
+                    return new Game_Sjsg().Login(UserId, ServerId, IsPC);
                 case "tj":
-                    return new Game_Tj().Login(UserId, ServerId, 0);
+                    return new Game_Tj().Login(UserId, ServerId, IsPC);
                 case "nz":
-                    return new Game_Nz().Login(UserId, ServerId, 0);
+                    return new Game_Nz().Login(UserId, ServerId, IsPC);
                 case "djj":
-                    return new Game_Djj().Login(UserId, ServerId, 0);
+                    return new Game_Djj().Login(UserId, ServerId, IsPC);
                 case "jlc":
-                    return new Game_Jlc().Login(UserId, ServerId, 0);
+                    return new Game_Jlc().Login(UserId, ServerId, IsPC);
                 case "ly":
-                    return new Game_Ly().Login(UserId, ServerId, 0);
+                    return new Game_Ly().Login(UserId, ServerId, IsPC);
                 case "xyb":
-                    return new Game_Xyb().Login(UserId, ServerId, 0);
+                    return new Game_Xyb().Login(UserId, ServerId, IsPC);
                 case "dhz":
-                    return new Game_Dhz().Login(UserId, ServerId, 0);
+                    return new Game_Dhz().Login(UserId, ServerId, IsPC);
                 case "wz":
-                    return new Game_Wz().Login(UserId, ServerId, 0);
+                    return new Game_Wz().Login(UserId, ServerId, IsPC);
                 case "dpqk":
-                    return new Game_Dpqk().Login(UserId, ServerId, 0);
+                    return new Game_Dpqk().Login(UserId, ServerId, IsPC);
                 case "lm":
-                    return new Game_Lm().Login(UserId, ServerId, 0);
+                    return new Game_Lm().Login(UserId, ServerId, IsPC);
                 case "mxqy":
-                    return new Game_Mxqy().Login(UserId, ServerId, 0);
+                    return new Game_Mxqy().Login(UserId, ServerId, IsPC);
                 case "zsg":
-                    return new Game_Zsg().Login(UserId, ServerId, 0);
+                    return new Game_Zsg().Login(UserId, ServerId, IsPC);
                 case "rxhzw":
-                    return new Game_Rxhzw().Login(UserId, ServerId, 0);
+                    return new Game_Rxhzw().Login(UserId, ServerId, IsPC);
                 case "klsg":
-                    return new Game_Klsg().Login(UserId, ServerId, 0);
+                    return new Game_Klsg().Login(UserId, ServerId, IsPC);
                 case "gjqx":
-                    return new Game_Gjqx().Login(UserId, ServerId, 0);
+                    return new Game_Gjqx().Login(UserId, ServerId, IsPC);
                 case "txj":
-                    return new Game_Txj().Login(UserId, ServerId, 0);
+                    return new Game_Txj().Login(UserId, ServerId, IsPC);
                 case "wdqk":
-                    return new Game_Wdqk().Login(UserId, ServerId, 0);
+                    return new Game_Wdqk().Login(UserId, ServerId, IsPC);
                 case "chcq":
-                    return new Game_Chcq().Login(UserId, ServerId, 0);
+                    return new Game_Chcq().Login(UserId, ServerId, IsPC);
                 case "jjsg":
-                    return new Game_Jjsg().Login(UserId, ServerId, 0);
+                    return new Game_Jjsg().Login(UserId, ServerId, IsPC);
                 case "qh":
-                    return new Game_Qh().Login(UserId, ServerId, 0);
+                    return new Game_Qh().Login(UserId, ServerId, IsPC);
                 case "yjxy":
-                    return new Game_Yjxy().Login(UserId, ServerId, 0);
+                    return new Game_Yjxy().Login(UserId, ServerId, IsPC);
                 case "xxas":
-                    return new Game_Xxas().Login(UserId, ServerId, 0);
+                    return new Game_Xxas().Login(UserId, ServerId, IsPC);
                 case "tgzt":
-                    return new Game_Tgzt().Login(UserId, ServerId, 0);
+                    return new Game_Tgzt().Login(UserId, ServerId, IsPC);
                 case "nslm":
-                    return new Game_Nslm().Login(UserId, ServerId, 0);
+                    return new Game_Nslm().Login(UserId, ServerId, IsPC);
                 case "ftz":
-                    return new Game_Ftz().Login(UserId, ServerId, 0);
+                    return new Game_Ftz().Login(UserId, ServerId, IsPC);
                 case "sbcs":
-                    return new Game_Sbcs().Login(UserId, ServerId, 0);
+                    return new Game_Sbcs().Login(UserId, ServerId, IsPC);
                 case "zwj":
-                    return new Game_Zwj().Login(UserId, ServerId, 0);
+                    return new Game_Zwj().Login(UserId, ServerId, IsPC);
                 case "dqqyz":
-                    return new Game_Dqqyz().Login(UserId, ServerId, 0);
+                    return new Game_Dqqyz().Login(UserId, ServerId, IsPC);
                 case "yxy":
-                    return new Game_Yxy().Login(UserId, ServerId, 0);
+                    return new Game_Yxy().Login(UserId, ServerId, IsPC);
                 case "jhwj":
-                    return new Game_Jhwj().Login(UserId, ServerId, 0);
+                    return new Game_Jhwj().Login(UserId, ServerId, IsPC);
                 default:
                     return "";
             }

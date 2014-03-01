@@ -37,7 +37,15 @@ namespace Game.Manager
             gs = gss.GetGameServer(ServerId);                              //获取用户要登录的服务器
             tstamp = Utils.GetTimeSpan();                                  //获取时间戳
             Sign = DESEncrypt.Md5("fcm" + "n" + "gid" + "221" + "pid" + gc.AgentId + "sid" + gs.QuFu + "time" + tstamp + "uid" + gu.UserName + gc.LoginTicket, 32);            //获取验证码
-            string LoginUrl = "http://" + gc.LoginCom + "?pid=" + gc.AgentId + "&gid=221&sid=" + gs.QuFu + "&uid=" + gu.UserName + "&time=" + tstamp + "&fcm=n&sign= " + Sign + "&client=web";
+            string LoginUrl = "http://" + gc.LoginCom + "?pid=" + gc.AgentId + "&gid=221&sid=" + gs.QuFu + "&uid=" + gu.UserName + "&time=" + tstamp + "&fcm=n&sign= " + Sign;
+            if (IsPC == 1)
+            {
+                LoginUrl += "&client=pc";
+            }
+            else
+            {
+                LoginUrl += "&client=web";
+            }
             return LoginUrl;
         }
 
@@ -184,7 +192,7 @@ namespace Game.Manager
                         gui.Message = "查询失败！内部分析错误！";
                         break;
                     case "300":
-                         gui.Message = "查询失败！平台验证失败！";
+                        gui.Message = "查询失败！平台验证失败！";
                         break;
                     default:
                         Dictionary<string, string> Jd = Json.JsonToArray(SelResult);

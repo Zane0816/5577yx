@@ -70,7 +70,7 @@ a{text-decoration:none;}
 .Link a{margin-left:10px;}
 .Link .fl{padding-top:15px;}
 .Link .fr{padding-top:12px;}
-.Link1{position:absolute; top:-32px; left:55px; z-index:1}
+.Link1{position:absolute; top:-25px; left:55px; z-index:1}
 
 .server{width:646px; height:151px; background:url(../../images/jhwj/serverbg.jpg) no-repeat; margin-top:10px; margin-left:-4px; overflow:hidden;}
 .server h3{height:26px; line-height:26px; color:#FFF; padding-left:70px;}
